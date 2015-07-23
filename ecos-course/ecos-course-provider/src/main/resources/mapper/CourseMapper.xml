@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.netease.esp.ecos.course.dao.CourseDAO">
+    
+	<insert id="insert" parameterType="Course" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO `course` (`name`) 
+		VALUES (#{name});	
+	</insert>
+	
+	<select id="query" parameterType="_long" resultMap="courseResultMap">
+		select * from course where id=#{id}
+	</select>
+	
+	<resultMap type="Course" id="courseResultMap"></resultMap>
+</mapper>
